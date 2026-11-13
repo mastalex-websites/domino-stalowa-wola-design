@@ -221,7 +221,7 @@ footer { width: 88%; margin: auto; display: flex; justify-content: space-between
   .mobile-nav > summary span { height: 1px; width: 17px; background: var(--ink); transition: transform 180ms; }
   .mobile-nav[open] > summary span:first-child { transform: translateY(3px) rotate(45deg); }
   .mobile-nav[open] > summary span:last-child { transform: translateY(-3px) rotate(-45deg); }
-  .mobile-nav .dropdown-links { position: fixed; inset: 0; z-index: 0; display: flex; flex-direction: column; justify-content: safe center; width: 100%; height: 100dvh; padding: max(90px, env(safe-area-inset-top)) 8% max(30px, env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; border: 0; border-radius: 0; background: var(--paper); box-shadow: none; }
+  .mobile-nav .dropdown-links { position: fixed; inset: 0; z-index: 0; display: flex; flex-direction: column; justify-content: safe center; width: 100vw; height: 100dvh; padding: max(90px, env(safe-area-inset-top)) 8% max(30px, env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; border: 0; border-radius: 0; background: var(--paper); box-shadow: none; }
   .mobile-nav .dropdown-links a { flex-shrink: 0; padding: 10px 0; font-size: clamp(23px, 6vw, 32px); line-height: 1.2; letter-spacing: -.035em; border-radius: 0; }
   .mobile-nav .dropdown-links a:nth-last-child(-n+2) { font-size: 18px; letter-spacing: -.02em; }
   .mobile-nav[open] .dropdown-links { animation: menu-reveal 220ms ease-out; }
@@ -310,7 +310,6 @@ footer { width: 88%; margin: auto; display: flex; justify-content: space-between
   .mobile-nav[open] .dropdown-links { animation: none; }
 }
 html.menu-open, html.menu-open body { overflow: hidden; overscroll-behavior: none; }
-html { scrollbar-gutter: stable; }
 @keyframes menu-reveal {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
