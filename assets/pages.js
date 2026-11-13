@@ -1,17 +1,10 @@
 import { calculatePurchaseCosts } from './costs.mjs';
+import { initializeMobileNavigation } from './navigation.js';
+
+initializeMobileNavigation();
 
 const siteBase = document.querySelector('meta[name="site-base"]')?.content || '/';
 
-const mobileMenu = document.querySelector('.mobile-nav');
-mobileMenu?.addEventListener('click', event => {
-  if (event.target.closest('a')) mobileMenu.open = false;
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && mobileMenu?.open) {
-    mobileMenu.open = false;
-    mobileMenu.querySelector('summary').focus();
-  }
-});
 document.querySelector('[data-back]')?.addEventListener('click', () => {
   if (document.referrer.startsWith(location.origin) && history.length > 1) history.back();
   else location.href = siteBase + 'oferty/';
